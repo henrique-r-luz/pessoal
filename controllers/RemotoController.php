@@ -2,15 +2,8 @@
 
 namespace app\controllers;
 
-use Yii;
-use yii\filters\AccessControl;
+
 use yii\web\Controller;
-use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
-use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Facebook\WebDriver\Remote\DesiredCapabilities;
 use JonnyW\PhantomJs\Client;
 
 //require_once('vendor/autoload.php');
