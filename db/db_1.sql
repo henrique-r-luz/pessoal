@@ -10,7 +10,7 @@ create table atualizacao(
   valor_total real
 );
 
-
+--banco titlos financeiros
 create table titulos(
 	id serial primary key,
 	ativo text,
