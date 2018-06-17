@@ -1,33 +1,35 @@
+//robo de acesso ao site da easynvest
+var system = require('system');
 
-var login = '';
-var senha = '';
+var login = system.args[1];
+var senha = system.args[2];
 var page = require('webpage').create(),
+        //acessa o site 
         server = 'https://portal.easynvest.com.br/autenticacao/login',
-        data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
-
+        //define os parâmetros de autenticação
+        //data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
+        data = 'AssinaturaEletronica='+'N1yC9t'+'&Conta='+'5224629'+'&PrimeiroAcesso=false';
+        
+//realiza a requisição post
 page.open(server, 'post', data, function (status) {
     if (status !== 'success') {
-        console.log('Unable to post!');
-    } else {
-        //console.log('post ok')
-        //console.log(page.content);
-        // page.render('easy.png');
-        //var page = require('webpage').create(),
-        //setTimeout(function () {
-        page.open('https://portal.easynvest.com.br/financas/custodia/', function (status) {
-            //console.log("Status: " + status);
+        console.log('Unable to post!'+status);
+        phantom.exit();    
+    } else {  
+    	//após a requisição acessa o site de custodia 
+        page.open('https://portal.easynvest.com.br/financas/custodia/', function (status) { 
             if (status === "success") {
+            	// define um time out para dar tempo da pagina carregar
                 setTimeout(function () {
+                	//inporta a biblioteca java script
                     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
-                        //console.log('carrega fim...')
-                        //page.render('custodia.png');
+                        //obtém os titulos de renda fixa
                         console.log(page.evaluate(function () {
                             var text = '';
                             $("#div_rendafixa > table > tbody > tr").each(function() {
-                                   text=text+'!@';
+                                   text=text+'!@'//caracter que define os diferentes títulos;
                                    $(this).find('td').each(function(){
-                                       //console.log($(this).find('a'))
-                                       text=text+$(this).html()+'#&';
+                                       text=text+$(this).html()+'#&'//caracter  que define o atributo de cada título;
                                 })
                             });
                             return text;
@@ -37,10 +39,9 @@ page.open(server, 'post', data, function (status) {
                     });
                 }, 5000);
             } else {
-                //console.log('erro ao abrir custódia')
+                console.log('erro ao abrir custódia')
+                phantom.exit();    
             }
-
-
         });
     }
 
