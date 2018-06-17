@@ -17,7 +17,9 @@ class RemotoController extends Controller {
     
     
     public function actionExecutaPhantom(){
-        $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js');
+        //recupera login e senha
+        $xml = $this->getLoginSenha();
+        $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js '.$xml->login.' '.$xml->senha);
         $rendaFixa =explode('!@', $output);
         foreach ($rendaFixa as $i=>$titulo){
             $linha = explode('#&', $titulo);
@@ -32,7 +34,7 @@ class RemotoController extends Controller {
         $url = '/vagrant/autentica.xml';
         if (file_exists($url)) {
             $xml = simplexml_load_file($url);
-            print_r($xml);
+            return $xml;
         } else {
             exit('Falha ao abrir  XML.');
         }
