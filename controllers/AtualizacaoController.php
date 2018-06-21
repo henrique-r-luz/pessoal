@@ -139,7 +139,7 @@ class AtualizacaoController extends Controller
     }
     
     
-    public function getLoginSenha(){
+    private function getLoginSenha(){
         $url = '/vagrant/autentica.xml';
         if (file_exists($url)) {
             $xml = simplexml_load_file($url);
@@ -147,6 +147,10 @@ class AtualizacaoController extends Controller
         } else {
             exit('Falha ao abrir  XML.');
         }
+    }
+    
+    private function populaBanco(){
+        
     }
     
 }

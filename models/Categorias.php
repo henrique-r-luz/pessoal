@@ -29,6 +29,7 @@ class Categorias extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'string'],
+            [['id', 'nome'],'required']
         ];
     }
 

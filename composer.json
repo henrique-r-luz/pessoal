@@ -25,7 +25,9 @@
 		"yiisoft/yii2-swiftmailer" : "~2.0.0",
 		"facebook/webdriver" : "*",
 		"jonnyw/php-phantomjs" : "4.*",
-		"symfony/dependency-injection" : "3.3.9"
+		"symfony/dependency-injection" : "3.3.9",
+		"hiqdev/yii2-theme-adminlte" : "^0.1.0",
+		"dmstr/yii2-adminlte-asset" : "^2.*"
 	},
 	"require-dev" : {
 		"yiisoft/yii2-debug" : "~2.0.0",

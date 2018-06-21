@@ -1,9 +1,11 @@
 
 create table categorias(
- id serial primary key,
+ id int primary key,
  nome text
 
 );
+
+
 
 create table atualizacao(
   id serial primary key,
