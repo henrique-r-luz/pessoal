@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Atualizacao', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Atualiza Dados', ['/remoto/executa-phantom'], ['class'=>'btn btn-primary']) ?>
     </p>
 
     <?= GridView::widget([

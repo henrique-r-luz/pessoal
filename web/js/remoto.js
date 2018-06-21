@@ -42,7 +42,7 @@ page.open(server, 'post', data, function (status) {
                         }));
                      phantom.exit();    
                     });
-                }, 5000);
+                }, 100);
             } else {
                 console.log('erro ao abrir custódia')
                 phantom.exit();    
