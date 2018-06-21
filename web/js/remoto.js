@@ -3,17 +3,22 @@ var system = require('system');
 
 var login = system.args[1];
 var senha = system.args[2];
-var page = require('webpage').create(),
+var page = require('webpage').create();
         //acessa o site 
-        server = 'https://portal.easynvest.com.br/autenticacao/login',
+        server = 'https://portal.easynvest.com.br/autenticacao/login';
         //define os parâmetros de autenticação
         //data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
         data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
         
+       /* page.onResourceError = function(resourceError) {
+            page.reason = resourceError.errorString;
+            page.reason_url = resourceError.url;
+        };*/        
+        
 //realiza a requisição post
 page.open(server, 'post', data, function (status) {
     if (status !== 'success') {
-        console.log('Unable to post!'+status);
+        console.log('Unable to post! ');
         phantom.exit();    
     } else {  
     	//após a requisição acessa o site de custodia 
