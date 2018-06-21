@@ -8,7 +8,7 @@ var page = require('webpage').create(),
         server = 'https://portal.easynvest.com.br/autenticacao/login',
         //define os parâmetros de autenticação
         //data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
-        data = 'AssinaturaEletronica='+'N1yC9t'+'&Conta='+'5224629'+'&PrimeiroAcesso=false';
+        data = 'AssinaturaEletronica='+senha+'&Conta='+login+'&PrimeiroAcesso=false';
         
 //realiza a requisição post
 page.open(server, 'post', data, function (status) {
