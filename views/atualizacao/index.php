@@ -12,19 +12,17 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="atualizacao-index">
 
-
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Atualiza Dados', ['/remoto/executa-phantom'], ['class'=>'btn btn-primary']) ?>
+        <?= Html::a('Atualiza Dados', ['executa-phantom'], ['class'=>'btn btn-primary']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'data',
             'valor_total',

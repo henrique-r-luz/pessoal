@@ -8,6 +8,8 @@ use app\models\AtualizacaoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Categorias;
+use app\models\Titulos;
 
 /**
  * AtualizacaoController implements the CRUD actions for Atualizacao model.
@@ -127,6 +129,12 @@ class AtualizacaoController extends Controller
     
     public function actionExecutaPhantom(){
         //recupera login e senha
+       $dados = $this->executaRobo();
+       $this->populaBanco($dados);
+       
+    }
+    
+    private function  executaRobo(){
         $xml = $this->getLoginSenha();
         $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js '.$xml->login.' '.$xml->senha);
         $rendaFixa =explode('!@', $output);
@@ -134,8 +142,8 @@ class AtualizacaoController extends Controller
             $linha = explode('#&', $titulo);
             $rendaFixa[$i]= $linha;
         }
-        unset($rendaFixa[0]);
-        print_r($rendaFixa);
+       
+        return $rendaFixa;
     }
     
     
@@ -149,8 +157,36 @@ class AtualizacaoController extends Controller
         }
     }
     
-    private function populaBanco(){
-        
+    private function populaBanco($dados){
+        $atualizacao = new Atualizacao();
+        $atualizacao->data = date('Y-m-d');
+        $atualizacao->valor_total = 0;
+        $transaction = Yii::$app->db->beginTransaction();
+        try{
+            foreach($dados as $titulo){
+                if(sizeof($titulo)!=1){
+                $objTitulo = new Titulos();
+                $objTitulo->ativo = $titulo[0];
+                $objTitulo->emissor = $titulo[1];
+                $objTitulo->quantidade = $titulo[2];
+                $objTitulo->valor_compra = $titulo[3];
+                $objTitulo->valor_venda = $titulo[7]
+                $objTitulo->atualizacao_id = atualizacao->id; 
+                $objTitulo->categoria_id = 1;
+                if(!$objTitulo.save())
+                    throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.');
+              
+                }
+            }
+            if(!$atualizacao.save()){
+                throw new NotFoundHttpException('Ocorreu um erro ao salvar a atualização.');
+            }
+            }catch (Exception $e) {
+                $transaction->rollBack();
+                throw $e;
+            }
+        //renda fixa possui id = 1
+        //titulos = Titulos::find()
     }
     
 }

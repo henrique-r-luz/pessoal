@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
      
      <div class="row">
-    <div class="col-xs-6 col-sm-2 col-lg-2">
+    <div class="col-md-2 col-lg-2">
     
     <?= $form->field($model, 'id')->textInput() ?> 
     </div>
