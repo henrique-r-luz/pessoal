@@ -170,8 +170,8 @@ class AtualizacaoController extends Controller
                 $objTitulo->emissor = $titulo[1];
                 $objTitulo->quantidade = $titulo[2];
                 $objTitulo->valor_compra = $titulo[3];
-                $objTitulo->valor_venda = $titulo[7]
-                $objTitulo->atualizacao_id = atualizacao->id; 
+                $objTitulo->valor_venda = $titulo[7];
+                $objTitulo->atualizacao_id = $atualizacao->id; 
                 $objTitulo->categoria_id = 1;
                 if(!$objTitulo.save())
                     throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.');

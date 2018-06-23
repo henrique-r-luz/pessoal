@@ -7,9 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
@@ -26,9 +28,59 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'r' => 
+        array (
+            'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'k' => 
+        array (
+            'kartik\\widgets\\' => 15,
+            'kartik\\typeahead\\' => 17,
+            'kartik\\touchspin\\' => 17,
+            'kartik\\time\\' => 12,
+            'kartik\\tabs\\' => 12,
+            'kartik\\switchinput\\' => 19,
+            'kartik\\spinner\\' => 15,
+            'kartik\\sortable\\' => 16,
+            'kartik\\sidenav\\' => 15,
+            'kartik\\select2\\' => 15,
+            'kartik\\rating\\' => 14,
+            'kartik\\range\\' => 13,
+            'kartik\\plugins\\tabs\\' => 20,
+            'kartik\\plugins\\strengthmeter\\' => 29,
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\plugins\\dateformatter\\' => 29,
+            'kartik\\plugins\\checkbox\\' => 24,
+            'kartik\\password\\' => 16,
+            'kartik\\mpdf\\' => 12,
+            'kartik\\money\\' => 13,
+            'kartik\\helpers\\' => 15,
+            'kartik\\growl\\' => 13,
+            'kartik\\grid\\' => 12,
+            'kartik\\form\\' => 12,
+            'kartik\\file\\' => 12,
+            'kartik\\dynagrid\\' => 16,
+            'kartik\\dialog\\' => 14,
+            'kartik\\detail\\' => 14,
+            'kartik\\depdrop\\' => 15,
+            'kartik\\datetime\\' => 16,
+            'kartik\\datecontrol\\' => 19,
+            'kartik\\date\\' => 12,
+            'kartik\\color\\' => 13,
+            'kartik\\checkbox\\' => 16,
+            'kartik\\builder\\' => 15,
+            'kartik\\base\\' => 12,
+            'kartik\\alert\\' => 13,
+            'kartik\\affix\\' => 13,
+        ),
+        'd' => 
+        array (
+            'dmstr\\' => 6,
         ),
         'c' => 
         array (
@@ -38,24 +90,18 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-        'T' => 
-        array (
-            'Twig\\' => 5,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
-            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
-            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
             'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
-            'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\BrowserKit\\' => 29,
         ),
         'P' => 
@@ -64,6 +110,10 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
+        'M' => 
+        array (
+            'Mpdf\\' => 5,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -71,7 +121,6 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         'F' => 
         array (
             'Faker\\' => 6,
-            'Facebook\\WebDriver\\' => 19,
         ),
         'D' => 
         array (
@@ -80,6 +129,7 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         ),
         'C' => 
         array (
+            'Composer\\Installers\\' => 20,
             'Codeception\\PHPUnit\\' => 20,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
@@ -93,7 +143,7 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         ),
         'yii\\gii\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-gii',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-gii/src',
         ),
         'yii\\faker\\' => 
         array (
@@ -115,11 +165,175 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'rmrevin\\yii\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets',
+        ),
+        'kartik\\typeahead\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead',
+        ),
+        'kartik\\touchspin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin',
+        ),
+        'kartik\\time\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker',
+        ),
+        'kartik\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
+        ),
+        'kartik\\spinner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
+        ),
+        'kartik\\sortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable',
+        ),
+        'kartik\\sidenav\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-sidenav',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
+        'kartik\\rating\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating',
+        ),
+        'kartik\\range\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput',
+        ),
+        'kartik\\plugins\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-tabs-x',
+        ),
+        'kartik\\plugins\\strengthmeter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/strength-meter',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\plugins\\dateformatter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/php-date-formatter',
+        ),
+        'kartik\\plugins\\checkbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-checkbox-x',
+        ),
+        'kartik\\password\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-password',
+        ),
+        'kartik\\mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf',
+        ),
+        'kartik\\money\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-money',
+        ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
+        'kartik\\growl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
+        ),
+        'kartik\\grid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
+        ),
+        'kartik\\dynagrid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dynagrid',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
+        'kartik\\detail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-detail-view',
+        ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
+        ),
+        'kartik\\datecontrol\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-datecontrol',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+        ),
+        'kartik\\color\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput',
+        ),
+        'kartik\\checkbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-checkbox-x',
+        ),
+        'kartik\\builder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-builder',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
+        ),
+        'kartik\\alert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert',
+        ),
+        'kartik\\affix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
+        ),
+        'dmstr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -129,29 +343,21 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'Twig\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/twig/twig/src',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
-        'Symfony\\Component\\Process\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/process',
-        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
-        ),
-        'Symfony\\Component\\Filesystem\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
@@ -177,10 +383,6 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Symfony\\Component\\Config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/config',
-        ),
         'Symfony\\Component\\BrowserKit\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
@@ -197,6 +399,10 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -205,10 +411,6 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
-        'Facebook\\WebDriver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/facebook/webdriver/lib',
-        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -216,6 +418,10 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
         'Codeception\\PHPUnit\\' => 
         array (
@@ -233,11 +439,11 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
     );
 
     public static $prefixesPsr0 = array (
-        'T' => 
+        'c' => 
         array (
-            'Twig_' => 
+            'cebe\\gravatar\\' => 
             array (
-                0 => __DIR__ . '/..' . '/twig/twig/lib',
+                0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
             ),
         ),
         'P' => 
@@ -245,17 +451,6 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-            'PhantomInstaller\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakoch/phantomjs-installer/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'JonnyW\\PhantomJs\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src',
             ),
         ),
         'H' => 
@@ -289,82 +484,14 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
     );
 
     public static $classMap = array (
+        'FPDF_TPL' => __DIR__ . '/..' . '/setasign/fpdi/fpdf_tpl.php',
+        'FPDI' => __DIR__ . '/..' . '/setasign/fpdi/fpdi.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
-        'JonnyW\\PhantomJs\\Cache\\CacheInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Cache/CacheInterface.php',
-        'JonnyW\\PhantomJs\\Cache\\FileCache' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Cache/FileCache.php',
-        'JonnyW\\PhantomJs\\Client' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Client.php',
-        'JonnyW\\PhantomJs\\ClientInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/ClientInterface.php',
-        'JonnyW\\PhantomJs\\DependencyInjection\\ServiceContainer' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/DependencyInjection/ServiceContainer.php',
-        'JonnyW\\PhantomJs\\Engine' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Engine.php',
-        'JonnyW\\PhantomJs\\Exception\\InvalidExecutableException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/InvalidExecutableException.php',
-        'JonnyW\\PhantomJs\\Exception\\InvalidMethodException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/InvalidMethodException.php',
-        'JonnyW\\PhantomJs\\Exception\\InvalidUrlException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/InvalidUrlException.php',
-        'JonnyW\\PhantomJs\\Exception\\NotExistsException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/NotExistsException.php',
-        'JonnyW\\PhantomJs\\Exception\\NotWritableException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/NotWritableException.php',
-        'JonnyW\\PhantomJs\\Exception\\PhantomJsException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/PhantomJsException.php',
-        'JonnyW\\PhantomJs\\Exception\\ProcedureFailedException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/ProcedureFailedException.php',
-        'JonnyW\\PhantomJs\\Exception\\RequirementException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/RequirementException.php',
-        'JonnyW\\PhantomJs\\Exception\\SyntaxException' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Exception/SyntaxException.php',
-        'JonnyW\\PhantomJs\\Http\\AbstractRequest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/AbstractRequest.php',
-        'JonnyW\\PhantomJs\\Http\\CaptureRequest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/CaptureRequest.php',
-        'JonnyW\\PhantomJs\\Http\\CaptureRequestInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/CaptureRequestInterface.php',
-        'JonnyW\\PhantomJs\\Http\\MessageFactory' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/MessageFactory.php',
-        'JonnyW\\PhantomJs\\Http\\MessageFactoryInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/MessageFactoryInterface.php',
-        'JonnyW\\PhantomJs\\Http\\PdfRequest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/PdfRequest.php',
-        'JonnyW\\PhantomJs\\Http\\PdfRequestInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/PdfRequestInterface.php',
-        'JonnyW\\PhantomJs\\Http\\Request' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/Request.php',
-        'JonnyW\\PhantomJs\\Http\\RequestInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/RequestInterface.php',
-        'JonnyW\\PhantomJs\\Http\\Response' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/Response.php',
-        'JonnyW\\PhantomJs\\Http\\ResponseInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Http/ResponseInterface.php',
-        'JonnyW\\PhantomJs\\Parser\\JsonParser' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Parser/JsonParser.php',
-        'JonnyW\\PhantomJs\\Parser\\ParserInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Parser/ParserInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ChainProcedureLoader' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ChainProcedureLoader.php',
-        'JonnyW\\PhantomJs\\Procedure\\Input' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/Input.php',
-        'JonnyW\\PhantomJs\\Procedure\\InputInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/InputInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\Output' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/Output.php',
-        'JonnyW\\PhantomJs\\Procedure\\OutputInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/OutputInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\Procedure' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/Procedure.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureCompiler' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureCompiler.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureCompilerInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureCompilerInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureFactory' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureFactory.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureFactoryInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureFactoryInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureLoader' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureLoader.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureLoaderFactory' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureLoaderFactory.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureLoaderFactoryInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureLoaderFactoryInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureLoaderInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureLoaderInterface.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureValidator' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureValidator.php',
-        'JonnyW\\PhantomJs\\Procedure\\ProcedureValidatorInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Procedure/ProcedureValidatorInterface.php',
-        'JonnyW\\PhantomJs\\StringUtils' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/StringUtils.php',
-        'JonnyW\\PhantomJs\\Template\\TemplateRenderer' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Template/TemplateRenderer.php',
-        'JonnyW\\PhantomJs\\Template\\TemplateRendererInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Template/TemplateRendererInterface.php',
-        'JonnyW\\PhantomJs\\Test\\TestCase' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Test/TestCase.php',
-        'JonnyW\\PhantomJs\\Tests\\Integration\\ClientTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Integration/ClientTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Integration\\Procedure\\ProcedureCompilerTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Integration/Procedure/ProcedureCompilerTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Integration\\Procedure\\ProcedureValidatorTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Integration/Procedure/ProcedureValidatorTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Cache\\FileCacheTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Cache/FileCacheTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\ClientTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/ClientTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\EngineTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/EngineTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Http\\CaptureRequestTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Http/CaptureRequestTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Http\\MessageFactoryTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Http/MessageFactoryTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Http\\PdfRequestTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Http/PdfRequestTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Http\\RequestTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Http/RequestTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Http\\ResponseTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Http/ResponseTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Parser\\JsonParserTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Parser/JsonParserTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\ChainProcedureLoaderTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/ChainProcedureLoaderTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\InputTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/InputTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\OutputTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/OutputTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\ProcedureFactoryTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/ProcedureFactoryTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\ProcedureLoaderFactoryTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/ProcedureLoaderFactoryTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\ProcedureLoaderTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/ProcedureLoaderTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Procedure\\ProcedureTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Procedure/ProcedureTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\StringUtilsTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/StringUtilsTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Template\\TemplateRendererTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Template/TemplateRendererTest.php',
-        'JonnyW\\PhantomJs\\Tests\\Unit\\Validator\\EsprimaTest' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Tests/Unit/Validator/EsprimaTest.php',
-        'JonnyW\\PhantomJs\\Validator\\EngineInterface' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Validator/EngineInterface.php',
-        'JonnyW\\PhantomJs\\Validator\\Esprima' => __DIR__ . '/..' . '/jonnyw/php-phantomjs/src/JonnyW/PhantomJs/Validator/Esprima.php',
+        'FilterASCII85' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCII85.php',
+        'FilterASCIIHexDecode' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
+        'FilterLZW' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterLZW.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',
@@ -895,6 +1022,8 @@ class ComposerStaticInite5d5e6100fc2011d43a8dc6ea7c1cdd6
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
+        'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
