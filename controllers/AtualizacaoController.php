@@ -109,12 +109,14 @@ class AtualizacaoController extends Controller {
       public function actionExecutaPhantom() {
         //recupera login e senha
         $dados = $this->executaRobo();
-        print_r($dados);
-        exit();
         $resposta = $this->populaBanco($dados);
         if($resposta==true){
              Yii::$app->getSession()->setFlash('success', 'Os dados foram atualizacdos');
-            return $this->redirect(['index']); 
+             return $this->redirect(['index']); 
+        }
+        else{
+             Yii::$app->getSession()->setFlash('error', 'Ocorreu um erro');
+             return $this->redirect(['index']);
         }
     }
 
@@ -170,12 +172,19 @@ class AtualizacaoController extends Controller {
                     $objTitulo->ativo = $titulo[0];
                     $objTitulo->emissor = $titulo[1];
                     $objTitulo->quantidade = $titulo[2];
+                    //os valore sde compra e venda deve ser  convertidos
                     $objTitulo->valor_compra = $titulo[3];
                     $objTitulo->valor_venda = $titulo[7];
                     $objTitulo->atualizacao_id = $atualizacao->id;
                     $objTitulo->categoria_id = 1;
-                    if (!$objTitulo->save())
-                        throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.');
+                    if (!$objTitulo->save()){
+                        return false;
+                    }
+                        
+                    
+                       // echo 'erro: '.print_r($objTitulo->getErrors());
+                       // exit();
+                       // throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.'.print_r($objTitulo->getErrors()));
                 }
             }
             if (!$atualizacao->save()) {

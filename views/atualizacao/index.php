@@ -11,14 +11,12 @@ $this->title = 'Atualizacaos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="atualizacao-index">
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Atualiza Dados', ['executa-phantom'], ['class'=>'btn btn-primary']) ?>
+        <?= Html::a('Atualiza Dados', ['executa-phantom'], ['class' => 'btn btn-primary']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'bordered' => true,
@@ -26,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'condensed' => true,
         'responsive' => true,
         'hover' => true,
-       
         'panel' => [
             'type' => GridView::TYPE_DEFAULT,
             'heading' => $this->title,
@@ -35,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'data',
             'valor_total',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>

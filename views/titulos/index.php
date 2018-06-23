@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="titulos-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-     <?= Yii::$app->session->getFlash('success'); ?>
+    
 
     <p>
         <?= Html::a('Create Titulos', ['create'], ['class' => 'btn btn-success']) ?>

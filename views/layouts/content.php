@@ -16,7 +16,9 @@ use dmstr\widgets\Alert;
     </section>
 
     <section class="content">
+        <p>
         <?= Alert::widget() ?>
+            </p>
         <?= $content ?>
     </section>
 </div>
