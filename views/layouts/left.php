@@ -32,8 +32,9 @@
                 'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    ['label' => 'Categorias', 'icon' => 'dashboard', 'url' => ['/categorias']],
+                    ['label' => 'Titulos', 'icon' => 'dashboard', 'url' => ['/titulos']],
+                    ['label' => 'Atualização', 'icon' => 'dashboard', 'url' => ['/atualizacao']],
                     [
                         'label' => 'Some tools',
                         'icon' => 'share',

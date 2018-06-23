@@ -14,13 +14,12 @@ use app\models\Titulos;
 /**
  * AtualizacaoController implements the CRUD actions for Atualizacao model.
  */
-class AtualizacaoController extends Controller
-{
+class AtualizacaoController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -35,14 +34,13 @@ class AtualizacaoController extends Controller
      * Lists all Atualizacao models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new AtualizacaoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -52,10 +50,9 @@ class AtualizacaoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -64,8 +61,7 @@ class AtualizacaoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Atualizacao();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -73,7 +69,7 @@ class AtualizacaoController extends Controller
         }
 
         return $this->render('create', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -84,8 +80,7 @@ class AtualizacaoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -93,7 +88,7 @@ class AtualizacaoController extends Controller
         }
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -104,11 +99,23 @@ class AtualizacaoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+    
+    
+      public function actionExecutaPhantom() {
+        //recupera login e senha
+        $dados = $this->executaRobo();
+        print_r($dados);
+        exit();
+        $resposta = $this->populaBanco($dados);
+        if($resposta==true){
+             Yii::$app->getSession()->setFlash('success', 'Os dados foram atualizacdos');
+            return $this->redirect(['index']); 
+        }
     }
 
     /**
@@ -118,36 +125,29 @@ class AtualizacaoController extends Controller
      * @return Atualizacao the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = Atualizacao::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-    
-    public function actionExecutaPhantom(){
-        //recupera login e senha
-       $dados = $this->executaRobo();
-       $this->populaBanco($dados);
-       
-    }
-    
-    private function  executaRobo(){
+
+  
+
+    private function executaRobo() {
         $xml = $this->getLoginSenha();
-        $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js '.$xml->login.' '.$xml->senha);
-        $rendaFixa =explode('!@', $output);
-        foreach ($rendaFixa as $i=>$titulo){
+        $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js ' . $xml->login . ' ' . $xml->senha);
+        $rendaFixa = explode('!@', $output);
+        foreach ($rendaFixa as $i => $titulo) {
             $linha = explode('#&', $titulo);
-            $rendaFixa[$i]= $linha;
+            $rendaFixa[$i] = $linha;
         }
-       
+
         return $rendaFixa;
     }
-    
-    
-    private function getLoginSenha(){
+
+    private function getLoginSenha() {
         $url = '/vagrant/autentica.xml';
         if (file_exists($url)) {
             $xml = simplexml_load_file($url);
@@ -156,37 +156,39 @@ class AtualizacaoController extends Controller
             exit('Falha ao abrir  XML.');
         }
     }
-    
-    private function populaBanco($dados){
+
+    private function populaBanco($dados) {
+        
+        $transaction = Yii::$app->db->beginTransaction();
         $atualizacao = new Atualizacao();
         $atualizacao->data = date('Y-m-d');
         $atualizacao->valor_total = 0;
-        $transaction = Yii::$app->db->beginTransaction();
-        try{
-            foreach($dados as $titulo){
-                if(sizeof($titulo)!=1){
-                $objTitulo = new Titulos();
-                $objTitulo->ativo = $titulo[0];
-                $objTitulo->emissor = $titulo[1];
-                $objTitulo->quantidade = $titulo[2];
-                $objTitulo->valor_compra = $titulo[3];
-                $objTitulo->valor_venda = $titulo[7];
-                $objTitulo->atualizacao_id = $atualizacao->id; 
-                $objTitulo->categoria_id = 1;
-                if(!$objTitulo.save())
-                    throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.');
-              
+        try {
+            foreach ($dados as $titulo) {
+                if (sizeof($titulo) != 1) {
+                    $objTitulo = new Titulos();
+                    $objTitulo->ativo = $titulo[0];
+                    $objTitulo->emissor = $titulo[1];
+                    $objTitulo->quantidade = $titulo[2];
+                    $objTitulo->valor_compra = $titulo[3];
+                    $objTitulo->valor_venda = $titulo[7];
+                    $objTitulo->atualizacao_id = $atualizacao->id;
+                    $objTitulo->categoria_id = 1;
+                    if (!$objTitulo->save())
+                        throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.');
                 }
             }
-            if(!$atualizacao.save()){
+            if (!$atualizacao->save()) {
                 throw new NotFoundHttpException('Ocorreu um erro ao salvar a atualização.');
             }
-            }catch (Exception $e) {
-                $transaction->rollBack();
-                throw $e;
-            }
+            $transaction->commit();
+            return true;
+        } catch (Exception $e) {
+            $transaction->rollBack();
+            throw $e;
+        }
         //renda fixa possui id = 1
         //titulos = Titulos::find()
     }
-    
+
 }
