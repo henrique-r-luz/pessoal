@@ -30,5 +30,7 @@ create table titulos(
       
 );
 
+ALTER TABLE atualizacao ADD CONSTRAINT unica_data_autorizacao UNIQUE (data);
+
 
 

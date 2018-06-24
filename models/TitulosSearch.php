@@ -39,15 +39,14 @@ class TitulosSearch extends Titulos {
      * @return ActiveDataProvider
      */
     public function search($params) {
-        $query = Titulos::find();
+        $query = Titulos::find()->where(['atualizacao_id'
+            =>(Atualizacao::find()->select('id')->orderBy(['data'=>SORT_DESC])->limit(1))]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'pageSize' => 20,
-            ],
+          
         ]);
 
         $this->load($params);
