@@ -10,6 +10,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\Categorias;
 use app\models\Titulos;
+use app\componentes\Mesagens;
+use app\componentes\Helper;
 
 /**
  * AtualizacaoController implements the CRUD actions for Atualizacao model.
@@ -19,6 +21,8 @@ class AtualizacaoController extends Controller {
     /**
      * @inheritdoc
      */
+    private $erros = '';
+
     public function behaviors() {
         return [
             'verbs' => [
@@ -104,20 +108,24 @@ class AtualizacaoController extends Controller {
 
         return $this->redirect(['index']);
     }
-    
-    
-      public function actionExecutaPhantom() {
+
+    public function actionExecutaPhantom() {
         //recupera login e senha
+        if (Atualizacao::find()->where(['data' => date('Y-m-d')])->exists()) {
+            Yii::$app->getSession()->setFlash('warning', 'O procedimento já foi realizado neste data' );
+            return $this->redirect(['index']);
+        }
         $dados = $this->executaRobo();
         $resposta = $this->populaBanco($dados);
-        if($resposta==true){
-             Yii::$app->getSession()->setFlash('success', 'Os dados foram atualizacdos');
-             return $this->redirect(['index']); 
+        if ($resposta == true) {
+            Yii::$app->getSession()->setFlash('success', 'Os dados foram atualizacdos');
+            return $this->redirect(['index']);
         }
-        else{
-             Yii::$app->getSession()->setFlash('error', 'Ocorreu um erro');
-             return $this->redirect(['index']);
+        if ($resposta == false) {
+            Yii::$app->getSession()->setFlash('error', 'Ocorreu um erro:' . $this->erros);
+            return $this->redirect(['index']);
         }
+       
     }
 
     /**
@@ -134,8 +142,6 @@ class AtualizacaoController extends Controller {
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
-  
 
     private function executaRobo() {
         $xml = $this->getLoginSenha();
@@ -159,36 +165,48 @@ class AtualizacaoController extends Controller {
         }
     }
 
+    /*
+     * popula o banco de dados com os valores recuperados pelo motor de busca
+     */
+
     private function populaBanco($dados) {
-        
+
+        Categorias::popula();
         $transaction = Yii::$app->db->beginTransaction();
-        $atualizacao = new Atualizacao();
-        $atualizacao->data = date('Y-m-d');
-        $atualizacao->valor_total = 0;
         try {
+
+            $atualizacao = new Atualizacao();
+            $atualizacao->data = date('Y-m-d');
+            $atualizacao->valor_total = 0;
+            if (!$atualizacao->save()) {
+                $this->erros = 'Modelo Atualização ' . Mesagens::erros($atualizacao->getErrors());
+                return false;
+            }
             foreach ($dados as $titulo) {
                 if (sizeof($titulo) != 1) {
                     $objTitulo = new Titulos();
-                    $objTitulo->ativo = $titulo[0];
+                    $ativo = Helper::get_string_between($titulo[0], '">', '</');
+                    $objTitulo->ativo = $ativo;
                     $objTitulo->emissor = $titulo[1];
-                    $objTitulo->quantidade = $titulo[2];
-                    //os valore sde compra e venda deve ser  convertidos
-                    $objTitulo->valor_compra = $titulo[3];
-                    $objTitulo->valor_venda = $titulo[7];
+                    //os valores de compra, venda e quantidade deve ser  convertidos
+                    $compra = str_replace('.', '', $titulo[3]);
+                    $compra = str_replace(',', '.', $compra);
+                    $venda = str_replace('.', '', $titulo[7]);
+                    $venda = str_replace(',', '.', $venda);
+                    $quantidade = str_replace(',', '.', $titulo[2]);
+                    $tributos = str_replace(',', '.', $titulo[6]);
+                    $objTitulo->quantidade = $quantidade;
+                    $objTitulo->taxa = $titulo[5];
+                    $objTitulo->tributos = $tributos;
+                    $objTitulo->valor_compra = $compra;
+                    $objTitulo->valor_venda = $venda;
                     $objTitulo->atualizacao_id = $atualizacao->id;
                     $objTitulo->categoria_id = 1;
-                    if (!$objTitulo->save()){
+                    if (!$objTitulo->save()) {
+                        $this->erros = ' Modelo Titulos ' . Mesagens::erros($objTitulo->getErrors());
                         return false;
                     }
-                        
-                    
-                       // echo 'erro: '.print_r($objTitulo->getErrors());
-                       // exit();
-                       // throw new NotFoundHttpException('Ocorreu um erro ao salvar os titulos.'.print_r($objTitulo->getErrors()));
                 }
-            }
-            if (!$atualizacao->save()) {
-                throw new NotFoundHttpException('Ocorreu um erro ao salvar a atualização.');
             }
             $transaction->commit();
             return true;
@@ -196,8 +214,7 @@ class AtualizacaoController extends Controller {
             $transaction->rollBack();
             throw $e;
         }
-        //renda fixa possui id = 1
-        //titulos = Titulos::find()
+        
     }
 
 }

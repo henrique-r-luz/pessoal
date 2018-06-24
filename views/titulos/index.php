@@ -13,39 +13,57 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="titulos-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    
+
 
     <p>
         <?= Html::a('Create Titulos', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-       'dataProvider' => $dataProvider,
+    <?=
+    GridView::widget([
+        'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'bordered' => true,
         'striped' => true,
         'condensed' => true,
         'responsive' => true,
         'hover' => true,
-       
         'panel' => [
             'type' => GridView::TYPE_DEFAULT,
             'heading' => $this->title,
         ],
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'ativo:ntext',
+            [
+              'attribute'=>'ativo',
+                'pageSummary'=>'Total',
+            ],
             'emissor:ntext',
             'quantidade',
             'tributos',
-            //'valor_compra',
-            //'valor_venda',
+            'taxa',
+            [
+                'attribute' => 'valor_compra',
+                'pageSummary' => true,
+            ],
+             [
+                'attribute' => 'valor_venda',
+                'pageSummary' => true,
+            ],
+            [
+                'attribute' => 'Lucro',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return number_format($model->valor_venda - $model->valor_compra, 2, '.', ',');
+                },
+                'pageSummary' => true,
+            ],
             //'atualizacao_id',
             //'categoria_id',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'kartik\grid\ActionColumn'],
         ],
-    ]); ?>
+        'showPageSummary' => true,
+        'showFooter' => true
+
+    ]);
+    ?>
 </div>

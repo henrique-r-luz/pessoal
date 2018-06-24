@@ -1,12 +1,12 @@
-
+-- tipos de investimentos da corretora
 create table categorias(
- id int primary key,
+ id int  NOT NULL primary key,
  nome text
 
 );
 
 
-
+-- relata as atualizações do sistema
 create table atualizacao(
   id serial primary key,
   data date,
@@ -20,10 +20,12 @@ create table titulos(
 	emissor text,
 	quantidade real,
 	tributos real,
+        taxa text,
 	valor_compra real,
 	valor_venda real,
-        atualizacao_id int  REFERENCES atualizacao ,
-        categoria_id int  REFERENCES categorias
+        atualizacao_id int  NOT NULL REFERENCES atualizacao ,
+        categoria_id int  NOT NULL  REFERENCES categorias,
+        UNIQUE (id, atualizacao_id)
         
       
 );

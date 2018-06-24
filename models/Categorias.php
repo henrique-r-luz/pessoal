@@ -51,4 +51,25 @@ class Categorias extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Titulos::className(), ['categoria_id' => 'id']);
     }
+    
+    /*
+     * popula categória com dados pré-definidos
+     */
+    public static function popula(){
+        //verifica se exite dados
+        //1-> renda fixa
+        if(!Categorias::find()->where(['id' =>1])->exists()){
+            $categoria = new Categorias();
+            $categoria->id = 1;
+            $categoria->nome = "Renda Fixa";
+            $categoria->save();
+        }
+        //2-> Fundos de Investimentos
+         if(!Categorias::find()->where(['id' =>2])->exists()){
+            $categoria = new Categorias();
+            $categoria->id = 2;
+            $categoria->nome = "Fundos de Investimentos";
+            $categoria->save();
+        }
+    }
 }

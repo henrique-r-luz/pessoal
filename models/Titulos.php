@@ -36,7 +36,8 @@ class Titulos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ativo', 'emissor'], 'string'],
+            [['ativo', 'emissor','taxa','quantidade', 'tributos', 'valor_compra', 'valor_venda','atualizacao_id', 'categoria_id'],'required'],
+            [['ativo', 'emissor','taxa'], 'string'],
             [['quantidade', 'tributos', 'valor_compra', 'valor_venda'], 'number'],
             [['atualizacao_id', 'categoria_id'], 'default', 'value' => null],
             [['atualizacao_id', 'categoria_id'], 'integer'],
@@ -53,6 +54,7 @@ class Titulos extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'ativo' => 'Ativo',
+            'taxa'=>'Taxa',
             'emissor' => 'Emissor',
             'quantidade' => 'Quantidade',
             'tributos' => 'Tributos',
