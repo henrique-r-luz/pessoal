@@ -146,12 +146,22 @@ class AtualizacaoController extends Controller {
     private function executaRobo() {
         $xml = $this->getLoginSenha();
         $output = shell_exec('phantomjs  /vagrant/pessoal/web/js/remoto.js ' . $xml->login . ' ' . $xml->senha);
-        $rendaFixa = explode('!@', $output);
+        //obtém os investimentos da easynveste
+        $tipoIvestimentos = explode(']@[', $output);
+        //renfa fixa
+        $rendaFixa = explode('!@', $tipoIvestimentos[1]);
         foreach ($rendaFixa as $i => $titulo) {
             $linha = explode('#&', $titulo);
             $rendaFixa[$i] = $linha;
         }
-
+        //fundos de investimentos
+        $fundos = explode('!@', $tipoIvestimentos[2]);
+        foreach ($fundos as $i => $titulo) {
+            $linha = explode('#&', $titulo);
+            $fundos[$i] = $linha;
+        }
+        print_r($rendaFixa);
+        exit();
         return $rendaFixa;
     }
 

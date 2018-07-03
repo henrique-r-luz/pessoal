@@ -30,13 +30,24 @@ page.open(server, 'post', data, function (status) {
                     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
                         //obtém os titulos de renda fixa
                         console.log(page.evaluate(function () {
-                            var text = '';
+                            var text = ']@[';
                             $("#div_rendafixa > table > tbody > tr").each(function() {
                                    text=text+'!@'//caracter que define os diferentes títulos;
                                    $(this).find('td').each(function(){
                                        text=text+$(this).html()+'#&'//caracter  que define o atributo de cada título;
                                 })
                             });
+                             text = text+ ']@[';
+                             $("#div_fundosdeinvestimento > table > tbody > tr").each(function() {
+                                   text=text+'!@'//caracter que define os diferentes títulos;
+                                   $(this).find('td').each(function(){
+                                       text=text+$(this).html()+'#&'//caracter  que define o atributo de cada título;
+                                })
+                            });
+                            //acessa a página de nota de negociação;
+                            //recupera a data de compra;
+                            //acessa a página de extrato;
+                            //recupera o valor de compra
                             return text;
                            
                         }));
